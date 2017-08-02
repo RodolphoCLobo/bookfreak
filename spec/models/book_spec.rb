@@ -5,7 +5,7 @@ describe Book, type: :model do
     book = Book.new
 
     expect(book).to have_attributes(
-      :title => nil, :pages => nil, :edit => nil,
+      :title => nil, :pages => nil,
       :publishing_company => nil, :writer => nil,
       :image_url => nil, :summary => nil
     )

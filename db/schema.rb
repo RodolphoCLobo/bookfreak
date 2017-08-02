@@ -15,7 +15,6 @@ ActiveRecord::Schema.define(version: 20170802035321) do
   create_table "books", force: :cascade do |t|
     t.string "title"
     t.integer "pages"
-    t.string "edit"
     t.string "publishing_company"
     t.string "writer"
     t.string "image_url"

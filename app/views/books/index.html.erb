@@ -1,0 +1,28 @@
+<h1>Books</h1>
+
+
+<table>
+  <thead>
+    <th>title</th>
+    <th>pages</th>
+    <th>publishing company</th>
+    <th>writer</th>
+    <th>image</th>
+    <th>summary</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </thead>
+  <tbody>
+    <% @books.each do |book| %>
+      <tr>
+        <td><%= book.title %></td>
+        <td><%= book.pages %></td>
+        <td><%= book.publishing company %></td>
+        <td><%= book.writer %></td>
+        <td><%= book.image %></td>
+        <td><%= book.summary %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
