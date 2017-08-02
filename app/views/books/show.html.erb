@@ -1,34 +1,31 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Book -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @book.title %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:title) %>:</strong></dt>
+  <dd><%= @book.title %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:pages) %>:</strong></dt>
+  <dd><%= @book.pages %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:publishing_company) %>:</strong></dt>
+  <dd><%= @book.publishing_company %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:writer) %>:</strong></dt>
+  <dd><%= @book.writer %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:image_url) %>:</strong></dt>
+  <dd><%= @book.image_url %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:summary) %>:</strong></dt>
+  <dd><%= @book.summary %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:user_id) %>:</strong></dt>
+  <dd><%= @book.user_id %></dd>
+</dl>
 
-<p>
-  <strong>Pages:</strong>
-  <%= @book.pages %>
-</p>
-
-<p>
-  <strong>Publishing company:</strong>
-  <%= @book.publishing_company %>
-</p>
-
-<p>
-  <strong>Writer:</strong>
-  <%= @book.writer %>
-</p>
-
-<p>
-  <strong>Image url:</strong>
-  <%= @book.image_url %>
-</p>
-
-<p>
-  <strong>Summary:</strong>
-  <%= @book.summary %>
-</p>
-
-<%= link_to 'Edit', edit_book_path(@book) %> |
-<%= link_to 'Back', books_path %>
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              books_path, :class => 'btn btn-default'  %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_book_path(@book), :class => 'btn btn-default' %>
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              book_path(@book),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
